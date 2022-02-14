@@ -44,7 +44,7 @@ status.success            boolean           return ture if read data successfull
 status.error              string            description of the error <br />
 ```
 
-##### example
+##### Example
 
 Input: <br />
 ```python
