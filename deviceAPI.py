@@ -1,5 +1,6 @@
 # skeleton code of device API
 from collections import namedtuple
+from typing import NamedTuple
 
 class DeviceInfo(NamedTuple):
 	name: str
