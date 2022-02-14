@@ -23,7 +23,6 @@ The device module will read data from different devices. (e.g. blood pressure, <
 thermometer, pulse, etc.) 
 
 ##### Input data
-
 ```python
 #deviceInfo data:
 #name                      type              description
@@ -36,7 +35,6 @@ thermometer, pulse, etc.)
 #key         string          key for the patient's account
 ```
 ##### Output data
-
 ```python
 #status data:
 #name                      type              description 
@@ -58,6 +56,24 @@ readData(deviceInfo, key)
 status.success = True
 status.error = "" 
 ```
+
+##### Error condition
+- No device information
+```python
+status.success=False
+status.error = "No Device Info"
+```
+- No key information
+```python
+status.success=False
+status.error = "No Key Info"
+```
+- incorrect device data
+```python
+status.success=False
+status.error = "No Data Found"
+```
+
 
 
 
