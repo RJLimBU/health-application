@@ -1,7 +1,7 @@
 import deviceAPI
 from deviceAPI import readData
 
-def test_deviceapi1:
+def test_deviceapi1():
 	bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
 	key = "4329018"
 
@@ -9,7 +9,7 @@ def test_deviceapi1:
 
 	assert status.success == True and status.error == ""
 
-def test_deviceapi2:
+def test_deviceapi2():
 	bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
 	key = 4329018
 

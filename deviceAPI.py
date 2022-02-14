@@ -1,4 +1,5 @@
 # skeleton code of device API
+from collections import namedtuple
 
 class DeviceInfo(NamedTuple):
 	name: str
@@ -13,8 +14,8 @@ def readData(deviceInfo, key):
 	if deviceInfo is None:
 		return Status(success=False, error="No Device Info")
 
-	if Type(key) is not str:
-		return Status(success=False, error="incorrect api Key")
+	if type(key) is not str:
+		return Status(success=False, error="Incorrect api Key")
 
 	if type(deviceInfo.data) is not list:
 		return Status(success=False, error="No Data Found")
