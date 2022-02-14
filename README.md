@@ -45,19 +45,18 @@ status.error              string            description of the error <br />
 ```
 
 ##### Example
-
-Input: <br />
 ```python
+#Input:
+
 deviceInfo.name = "bloodPressureMachine"
 deviceInfo.type = "blood_pressure_device"
 deviceInfo.data = [120]
 key = "feh27889#"
 
 readData(deviceInfo, key) <br />
-```
-<br />
-Output: <br />
-```python
+
+#Output:
+
 status.success = True <br />
 status.error = "" <br />
 ```
