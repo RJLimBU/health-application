@@ -24,19 +24,19 @@ thermometer, pulse, etc.)
 
 ##### Input data
 ```python
-#deviceInfo data:
+#deviceInfo data(NamedTuple): 
 #name                      type              description
 #deviceInfo.name           string      describes name of the input device
 #deviceInfo.deviceType     string      describes type of the input device
 #deviceInfo.data           list        stores parameters of measurements
 
-#device key:
+#api key:
 #name        type              descritopn
-#key         string          key for the patient's account
+#key         string          key for the device api
 ```
 ##### Output data
 ```python
-#status data:
+#status data(NamedTuple):
 #name                      type              description 
 #status.success            boolean           return ture if read data successfully otherwise return false
 #status.error              string            description of the error
@@ -48,7 +48,8 @@ thermometer, pulse, etc.)
 deviceInfo.name = "bloodPressureMachine"
 deviceInfo.type = "blood_pressure_device"
 deviceInfo.data = [120]
-key = "feh27889#"
+key = "41808193"
+bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
 
 readData(deviceInfo, key)
 
@@ -66,7 +67,7 @@ status.error = "No Device Info"
 - No key information
 ```python
 status.success=False
-status.error = "No Key Info"
+status.error = "Incorrect api Key"
 ```
 - incorrect device data
 ```python

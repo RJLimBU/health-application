@@ -1,25 +1,23 @@
 # skeleton code of device API
 
-class deviceInfo:
-	name= ""
-	deviceType= ""
-	data= []
+class DeviceInfo(NamedTuple):
+	name: str
+	deviceType: str
+	data: list
 
-class status:
-	success=True
-	error=""
+class Status(NamedTuple):
+	success: bool
+	error: str
 
-def readData(deviceInfo, status, key):
+def readData(deviceInfo, key):
 	if deviceInfo is None:
-		status.success=False
-		status.error = "No Device Info"
+		return Status(success=False, error="No Device Info")
 
-	if key is None:
-		status.success=False
-		status.error = "No Key Info"
+	if Type(key) is not str:
+		return Status(success=False, error="incorrect api Key")
 
 	if type(deviceInfo.data) is not list:
-		status.success=False
-		status.error = "No Data Found"
+		return Status(success=False, error="No Data Found")
 
-	status.success=True
+	return Status(success=True, error="")
+
