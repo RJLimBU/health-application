@@ -1,4 +1,3 @@
-#import deviceAPI
 from deviceAPI import *
 
 def test_deviceapi1():
