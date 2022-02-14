@@ -25,7 +25,7 @@ thermometer, pulse, etc.)
 ##### Input data
 
 deviceInfo data: <br />
-'''python
+```python
 name                      type              description <br />
 deviceInfo.name           string      describes name of the input device <br />
 deviceInfo.deviceType     string      describes type of the input device <br />
@@ -34,7 +34,7 @@ deviceInfo.data           list        stores parameters of measurements <br />
 device key:
 name        type              descritopn <br />
 key         string          key for the patient's account <br />
-'''
+```
 ##### Output data
 
 status data: <br />
