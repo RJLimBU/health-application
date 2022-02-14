@@ -1,5 +1,4 @@
-import deviceAPI
-from deviceAPI import readData
+from deviceAPI import *
 
 def test_deviceapi1():
 	bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
