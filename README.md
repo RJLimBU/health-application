@@ -25,23 +25,23 @@ thermometer, pulse, etc.)
 ##### Input data
 
 ```python
-deviceInfo data:
-name                      type              description
-deviceInfo.name           string      describes name of the input device
-deviceInfo.deviceType     string      describes type of the input device
-deviceInfo.data           list        stores parameters of measurements
+#deviceInfo data:
+#name                      type              description
+#deviceInfo.name           string      describes name of the input device
+#deviceInfo.deviceType     string      describes type of the input device
+#deviceInfo.data           list        stores parameters of measurements
 
-device key:
-name        type              descritopn <br />
-key         string          key for the patient's account <br />
+#device key:
+#name        type              descritopn
+#key         string          key for the patient's account
 ```
 ##### Output data
 
 ```python
-status data:
-name                      type              description <br />
-status.success            boolean           return ture if read data successfully otherwise return false <br />
-status.error              string            description of the error <br />
+#status data:
+#name                      type              description 
+#status.success            boolean           return ture if read data successfully otherwise return false
+#status.error              string            description of the error
 ```
 
 ##### Example
