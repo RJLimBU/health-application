@@ -47,18 +47,16 @@ status.error              string            description of the error <br />
 ##### Example
 ```python
 #Input:
-
 deviceInfo.name = "bloodPressureMachine"
 deviceInfo.type = "blood_pressure_device"
 deviceInfo.data = [120]
 key = "feh27889#"
 
-readData(deviceInfo, key) <br />
+readData(deviceInfo, key)
 
 #Output:
-
-status.success = True <br />
-status.error = "" <br />
+status.success = True
+status.error = "" 
 ```
 
 
