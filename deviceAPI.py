@@ -38,7 +38,7 @@ def readData(filename, key):
 		if device is None:
 			return Status(success=False, error="No Device Info")
 
-		if device["data"] is not list:
+		if type(device["data"]) is not list:
 			return Status(success=False, error="No Data Found")
 
 		if device["unit"] is None:
