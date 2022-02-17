@@ -18,3 +18,11 @@ def test_deviceapi2():
 	status = readData(filename,key)
 
 	assert status.success == False and status.error == "Incorrect api Key"
+
+def test_deviceapi3():
+	key = "890183781"
+	filename = "deviceinfo_f.json"
+
+	status = readData(filename, key)
+
+	assert status.success == False and status.error == "unit not found"
