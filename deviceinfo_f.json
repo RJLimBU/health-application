@@ -1,0 +1,9 @@
+{
+	"devices" : [
+	{
+		"name": "bloodPressureMachine",
+		"type": "blood_pressure_device",
+		"data": [89]
+	},
+	]
+}
