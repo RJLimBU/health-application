@@ -21,7 +21,7 @@ def test_deviceapi2():
 
 def test_deviceapi3():
 	key = "890183781"
-	filename = "deviceinfo_f"
+	filename = "deviceinfo_f.json"
 
 	status = readData(filename, key)
 
