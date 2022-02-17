@@ -22,6 +22,13 @@ apiKey = [
 	"432901890"
 ]
 
+checkUnit = {
+	"thermometer": ("C", "F"),
+	"pulse": ("bpm"),
+	"blood_pressure": ("mmHg"),
+	"glucometer": ("mg/dL", "mmol/L")
+}
+
 def readData(filename, key):
 
 	try:
@@ -44,4 +51,8 @@ def readData(filename, key):
 		if type(device["unit"]) is not str:
 			return Status(success=False, error="unit not found")
 
-	return Status(success=True, error="")
+	#return Status(success=True, error="")
+	return data
+
+out = readData("deviceinfo.json","903810847")
+print(out)
