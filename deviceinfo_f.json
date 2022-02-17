@@ -3,6 +3,7 @@
 	{
 		"name": "bloodPressureMachine",
 		"type": "blood_pressure_device",
+		"unit": 198,
 		"data": [89]
 	}
 	]
