@@ -1,0 +1,16 @@
+DeviceInfo = {
+	"devices" : [
+	{
+		"name": "bloodPressureMachine",
+		"type": "blood_pressure_device",
+		"unit": "mmHg",
+		"data": [120]
+	},
+	{
+		"name": "pulseMachine",
+		"type": "pulse_device",
+		"unit": "bpm",
+		"data": [80]
+	}
+	]
+}
