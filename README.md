@@ -24,15 +24,16 @@ thermometer, pulse, etc.)
 
 ##### Input data
 ```python
-#deviceInfo data(NamedTuple): 
-#name                      type              description
-#deviceInfo.name           string      describes name of the input device
-#deviceInfo.deviceType     string      describes type of the input device
-#deviceInfo.data           list        stores parameters of measurements
+#device information (.json) 
+#variable_name          type              description
+#name           		string      describes name of the input device
+#type     				string      describes type of the input device
+#unit					string		specifiy unit of measurement
+#data           		list        stores parameters of measurements
 
 #api key:
-#name        type              descritopn
-#key         string          key for the device api
+#variable_name        type              descritopn
+#key         		string          key for the device api
 ```
 ##### Output data
 ```python
@@ -45,13 +46,24 @@ thermometer, pulse, etc.)
 ##### Example
 ```python
 #Input:
-deviceInfo.name = "bloodPressureMachine"
-deviceInfo.type = "blood_pressure_device"
-deviceInfo.data = [120]
-key = "41808193"
-bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
+{
+	"devices" : [
+	{
+		"name": "bloodPressureMachine",
+		"type": "blood_pressure_device",
+		"unit": "mmHg",
+		"data": [120]
+	},
+	{
+		"name": "pulseMachine",
+		"type": "pulse_device",
+		"unit": "bpm",
+		"data": [80]
+	}
+	]
+}
 
-readData(deviceInfo, key)
+readData(filename, key)
 
 #Output:
 status.success = True
@@ -59,12 +71,17 @@ status.error = ""
 ```
 
 ##### Error condition
+- unable to load json file
+```python
+status.success=False
+status.error="unable to load file"
+```
 - No device information
 ```python
 status.success=False
 status.error = "No Device Info"
 ```
-- No key information
+- Incorrect key information
 ```python
 status.success=False
 status.error = "Incorrect api Key"
@@ -74,7 +91,8 @@ status.error = "Incorrect api Key"
 status.success=False
 status.error = "No Data Found"
 ```
-
-
-
-
+- No unit of measurement
+```python
+status.success=False
+status.error = "unit not found"
+```
