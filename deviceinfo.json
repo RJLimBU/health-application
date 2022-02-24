@@ -5,12 +5,6 @@
 		"type": "blood_pressure",
 		"unit": "mmHg",
 		"data": [120]
-	},
-	{
-		"name": "pulseMachine",
-		"type": "pulse",
-		"unit": "bpm",
-		"data": [80]
 	}
 	]
 }
