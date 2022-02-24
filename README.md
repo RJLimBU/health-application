@@ -26,10 +26,10 @@ thermometer, pulse, etc.)
 ```python
 #device information (.json) 
 #variable_name          type              description
-#name           		string      	describes name of the input device
-#type     				string      	describes type of the input device
-#unit					string			specifiy unit of measurement
-#data           		list        	stores parameters of measurements
+#name           	string      	describes name of the input device
+#type     		string      	describes type of the input device
+#unit			string			specifiy unit of measurement
+#data           	list        	stores parameters of measurements
 
 #api key:
 #variable_name        type              descritopn
@@ -53,12 +53,6 @@ thermometer, pulse, etc.)
 		"type": "blood_pressure_device",
 		"unit": "mmHg",
 		"data": [120]
-	},
-	{
-		"name": "pulseMachine",
-		"type": "pulse_device",
-		"unit": "bpm",
-		"data": [80]
 	}
 	]
 }
@@ -95,4 +89,9 @@ status.error = "No Data Found"
 ```python
 status.success=False
 status.error = "unit not found"
+```
+- Incorrect unit
+```python
+status.success=False
+status.error = "Incorrect unit"
 ```
