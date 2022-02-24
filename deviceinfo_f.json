@@ -2,7 +2,7 @@
 	"devices" : [
 	{
 		"name": "bloodPressureMachine",
-		"type": "blood_pressure_device",
+		"type": "blood_pressure",
 		"unit": 198,
 		"data": [89]
 	}

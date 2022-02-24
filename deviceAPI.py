@@ -41,7 +41,6 @@ def readData(filename, key):
 		return Status(success=False, error="Incorrect api Key")
 
 	for device in data["devices"]:
-
 		if device is None:
 			return Status(success=False, error="No Device Info")
 
@@ -51,8 +50,18 @@ def readData(filename, key):
 		if type(device["unit"]) is not str:
 			return Status(success=False, error="unit not found")
 
+		if device["type"] == "thermometer":
+			if device["unit"] not in checkUnit["thermometer"]:
+				return Status(success=False, error="Incorrect unit")
+		elif device["type"] == "pulse":
+			if device["unit"] not in checkUnit["pulse"]:
+				return Status(success=False, error="Incorrect unit")
+		elif device["type"] == "blood_pressure":
+			if device["unit"] not in checkUnit["blood_pressure"]:
+				return Status(success=False, error="Incorrect unit")
+		elif device["type"] == "glucometer":
+			if device["unit"] not in checkUnit["glucometer"]:
+				return Status(success=False, error="Incorrect unit")
+
 	#return Status(success=True, error="")
 	return data
-
-out = readData("deviceinfo.json","903810847")
-print(out)
