@@ -60,8 +60,16 @@ thermometer, pulse, etc.)
 readData(filename, key)
 
 #Output:
-status.success = True
-status.error = "" 
+{
+	"devices" : [
+	{
+		"name": "bloodPressureMachine",
+		"type": "blood_pressure_device",
+		"unit": "mmHg",
+		"data": [120]
+	}
+	]
+}
 ```
 
 ##### Error condition
