@@ -2,15 +2,9 @@
 	"devices" : [
 	{
 		"name": "bloodPressureMachine",
-		"type": "blood_pressure_device",
+		"type": "blood_pressure",
 		"unit": "mmHg",
 		"data": [120]
-	},
-	{
-		"name": "pulseMachine",
-		"type": "pulse_device",
-		"unit": "bpm",
-		"data": [80]
 	}
 	]
 }

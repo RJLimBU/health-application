@@ -6,9 +6,18 @@ def test_deviceapi1():
 	key = "432901890"
 	filename = "deviceinfo.json"
 
-	status = readData(filename, key)
+	out = readData(filename, key)
+	for device in out["devices"]:
+		assert device["type"] == "blood_pressure"
 
-	assert status.success == True and status.error == ""
+def test_deviceapi1unit():
+	#bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
+	key = "432901890"
+	filename = "deviceinfo.json"
+
+	out = readData(filename, key)
+	for device in out["devices"]:
+		assert device["unit"] == "mmHg"
 
 def test_deviceapi2():
 	#bloodDevice = DeviceInfo("bloodPressureMachine","blood_pressure_device", [120])
