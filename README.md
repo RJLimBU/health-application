@@ -103,3 +103,19 @@ status.error = "unit not found"
 status.success=False
 status.error = "Incorrect unit"
 ```
+
+#### Chat Module
+
+The chat module use document-database to store chat messages and sql-database to store user ID.
+
+```python
+Chat database
+{
+User_id
+Sender
+receiver
+messageType:{text,voice,image,video}
+time
+content
+}
+```
