@@ -111,11 +111,13 @@ The chat module use document-database to store chat messages and sql-database to
 ```python
 Chat database
 {
-User_id
-Sender
-receiver
+user_id
+message_id
+sender
+recipient
 messageType:{text,voice,image,video}
 time
-content
+file
+text
 }
 ```
