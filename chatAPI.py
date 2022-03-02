@@ -1,23 +1,44 @@
 import datetime
 import json
 
-def readMessage(content, mtype, user_id, sender, receiver):
-	curtime = str(datetime.datetime.now())
+def readMessage(user_id, sender, recipient, messageType, content):
+	curtime = datetime.datetime.now()
+	date = curtime.strftime("%x")
+	time = curtime.strftime("%X") 
 
-	chatMessage = {
-	'user_id': user_id, 
-	'sender': sender, 
-	'receiver': receiver, 
-	'messageType': mtype,
-	'time': curtime,
-	'content': content
-	}
+	if messageType == "text":
+		chatMessage = {
+		'user_id': user_id,	
+		'sender': sender,			#username of the sender
+		'recipient': recipient,		#id of receiver
+		'date': date,			# date of message sent
+		'time': time, 			# time of message sent
+		'messageType': messageType, 	# type of messages
+		'cotent': {
+			'msg': content,		# content
+			'link': None		# empty
+			}
+		}
+	else:
+		chatMessage = {
+		'user_id': user_id,	
+		'sender': sender,			#username of the sender
+		'recipient': recipient,		#id of receiver
+		'date': date,			# date of message sent
+		'time': time, 			# time of message sent
+		'messageType': messageType, 	# type of messages
+		'cotent': {
+			'msg': None,		# content
+			'link': content		# empty
+			}
+		}
+	
 
 	jstr = json.dumps(chatMessage, indent=4)
 
 	return jstr
 
 
-out = readMessage("Hello", "text", 1, "jack", "bob")
-print(out)
-print(type(out))
+# out = readMessage(1, "joe", "doctor1", "text", "hello")
+# print(out)
+# print(type(out))
