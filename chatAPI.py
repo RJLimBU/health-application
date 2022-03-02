@@ -6,6 +6,9 @@ def readMessage(user_id, sender, recipient, messageType, content):
 	date = curtime.strftime("%x")
 	time = curtime.strftime("%X") 
 
+	if user_id==None or user_id is not int:
+		return "error: incorrect user id"
+
 	if messageType == "text":
 		chatMessage = {
 		'user_id': user_id,	

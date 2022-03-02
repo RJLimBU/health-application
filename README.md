@@ -104,6 +104,17 @@ status.success=False
 status.error = "Incorrect unit"
 ```
 
+#### Web Module(restAPI)
+
+The web module gets data from device module then display the data in html format. The APIs are deploy to 
+Google Cloud Platform. 
+
+There are three functions in the restAPI: get, post, delete
+
+get: retrieve data 
+post: output data retrieved from get
+delete: this function will implement in the future, it will delete data that contain null
+
 #### Chat Module
 
 The chat module use document-database to store chat information
