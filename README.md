@@ -196,3 +196,10 @@ output data have four types: text, voice, image, video
 	}
 }
 ```
+##### error condition
+
+- no user id information or incorrect user id format
+```python
+#return error message
+"error: incorrect user id"
+```
