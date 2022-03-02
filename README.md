@@ -109,11 +109,11 @@ status.error = "Incorrect unit"
 The web module gets data from device module then display the data in html format. The APIs are deploy to 
 Google Cloud Platform. 
 
-There are three functions in the restAPI: get, post, delete
+There are three functions in the restAPI: get, post, delete.
 
-get: retrieve data 
-post: output data retrieved from get
-delete: this function will implement in the future, it will delete data that contain null
+get: retrieve data. <br />
+post: output data retrieved from get. <br />
+delete: this function will implement in the future, it will delete data that contain null. <br />
 
 #### Chat Module
 
