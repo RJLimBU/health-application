@@ -106,18 +106,82 @@ status.error = "Incorrect unit"
 
 #### Chat Module
 
-The chat module use document-database to store chat messages and sql-database to store user ID.
+The chat module use document-database to store chat information
+
+The module have input data with certain format feed to chat module and it return a dataset as output
+
+The following section show formats for input data and output data
+
+##### Input Data
 
 ```python
-Chat database
 {
-user_id
-message_id
-sender
-recipient
-messageType:{text,voice,image,video}
-time
-file
-text
+	user_id: int
+	sender: str #username of current user
+	recipient: str #id of recipient
+	messageType: {text,voice,image,video}
+	content: str
+
+}
+```
+
+##### Output Data
+
+output data have four types: text, voice, image, video
+
+```python
+#text message
+{
+	user_id: int	
+	sender: str		#username of the sender
+	recipient: str	#id of receiver
+	date: str	# date of message sent
+	time: str # time of message sent
+	messageType: str # type of messages
+	cotent: {
+		msg: str	# content
+		link: str	# for text message link will be empty
+	}
+}
+
+#voice message
+{
+	user_id: int	
+	sender: str		#username of the sender
+	recipient: str	#id of receiver
+	date: str	# date of message sent
+	time: str # time of message sent
+	messageType: str # type of messages
+	cotent: {
+		msg: str	# for voice message link is empty
+		link: str	# link of voice
+	}
+}
+
+#image message
+{
+	user_id: int	
+	sender: str		#username of the sender
+	recipient: str	#id of receiver
+	date: str	# date of message sent
+	time: str # time of message sent
+	messageType: str # type of messages
+	cotent: {
+		msg: str	# for image message link is empty
+		link: str	# link of image
+	}
+}
+# video message
+{
+	user_id: int	
+	sender: str		#username of the sender
+	recipient: str	#id of receiver
+	date: str	# date of message sent
+	time: str # time of message sent
+	messageType: str # type of messages
+	cotent: {
+		msg: str	# for video message link is empty
+		link: str	# link of video
+	}
 }
 ```
