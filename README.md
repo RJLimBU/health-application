@@ -75,33 +75,39 @@ readData(filename, key)
 ##### Error condition
 - unable to load json file
 ```python
-status.success=False
-status.error="unable to load file"
+{'error': "unable to load file"}
 ```
 - No device information
 ```python
-status.success=False
-status.error = "No Device Info"
+{'error': "Incorrect api Key"}
 ```
 - Incorrect key information
 ```python
-status.success=False
-status.error = "Incorrect api Key"
+{'error': "No Device Info"}
 ```
 - incorrect device data
 ```python
-status.success=False
-status.error = "No Data Found"
+{'error': "No Data Found"}
 ```
 - No unit of measurement
 ```python
-status.success=False
-status.error = "unit not found"
+{'error': "unit not found"}
 ```
-- Incorrect unit
+- Incorrect thermometer unit
 ```python
-status.success=False
-status.error = "Incorrect unit"
+{'error': "Incorrect thermometer unit"}
+```
+- Incorrect pulse unit
+```python
+{'error': "Incorrect pulse unit"}
+```
+- Incorrect blood_pressure unit
+```python
+{'error': "Incorrect blood_pressure unit"}
+```
+- Incorrect glucometer unit
+```python
+{'error': "Incorrect glucometer unit"}
 ```
 
 #### Web Module(restAPI)
@@ -116,7 +122,7 @@ post: output data retrieved from get. <br />
 delete: this function will implement in the future, it will delete data that contain null. <br />
 
 View the flask api at the Cloud Server: <br />
-[ec530healthapp.ue.r.appspot.com](ec530healthapp.ue.r.appspot.com)
+[ec530healthapp.ue.r.appspot.com](https://ec530healthapp.ue.r.appspot.com/)
 
 
 #### Chat Module
