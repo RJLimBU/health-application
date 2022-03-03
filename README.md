@@ -36,30 +36,43 @@ thermometer, pulse, etc.)
 #key         		string          key for the device api
 ```
 ##### Output data
+
+the api output data as "dict" type
+
 ```python
-#status data(NamedTuple):
-#name                      type              description 
-#status.success            boolean           return ture if read data successfully otherwise return false
-#status.error              string            description of the error
+{
+	"devices":[
+	{
+		"name": str
+		"type": str
+		"unit": str
+		"data": list
+	}
+	]
+}
 ```
 
 ##### Example
 ```python
-#Input:
-{
-	"devices" : [
-	{
-		"name": "bloodPressureMachine",
-		"type": "blood_pressure_device",
-		"unit": "mmHg",
-		"data": [120]
-	}
-	]
-}
+#Input data is json file and api key
+
+filename = "deviceinfo.json"
+key = "432901890"
+#this is the contents of json file "deviceinfo.json":
+# {
+# 	"devices" : [
+# 	{
+# 		"name": "bloodPressureMachine",
+# 		"type": "blood_pressure_device",
+# 		"unit": "mmHg",
+# 		"data": [120]
+# 	}
+# 	]
+# }
 
 readData(filename, key)
 
-#Output:
+#Output data is dict type
 {
 	"devices" : [
 	{
@@ -75,33 +88,39 @@ readData(filename, key)
 ##### Error condition
 - unable to load json file
 ```python
-status.success=False
-status.error="unable to load file"
+{'error': "unable to load file"}
 ```
 - No device information
 ```python
-status.success=False
-status.error = "No Device Info"
+{'error': "Incorrect api Key"}
 ```
 - Incorrect key information
 ```python
-status.success=False
-status.error = "Incorrect api Key"
+{'error': "No Device Info"}
 ```
 - incorrect device data
 ```python
-status.success=False
-status.error = "No Data Found"
+{'error': "No Data Found"}
 ```
 - No unit of measurement
 ```python
-status.success=False
-status.error = "unit not found"
+{'error': "unit not found"}
 ```
-- Incorrect unit
+- Incorrect thermometer unit
 ```python
-status.success=False
-status.error = "Incorrect unit"
+{'error': "Incorrect thermometer unit"}
+```
+- Incorrect pulse unit
+```python
+{'error': "Incorrect pulse unit"}
+```
+- Incorrect blood_pressure unit
+```python
+{'error': "Incorrect blood_pressure unit"}
+```
+- Incorrect glucometer unit
+```python
+{'error': "Incorrect glucometer unit"}
 ```
 
 #### Web Module(restAPI)
@@ -115,6 +134,10 @@ get: retrieve data. <br />
 post: output data retrieved from get. <br />
 delete: this function will implement in the future, it will delete data that contain null. <br />
 
+View the flask api at the Cloud Server: <br />
+[ec530healthapp.ue.r.appspot.com](https://ec530healthapp.ue.r.appspot.com/)
+
+
 #### Chat Module
 
 The chat module use document-database to store chat information
@@ -124,6 +147,8 @@ The module have input data with certain format feed to chat module and it return
 The following section show formats for input data and output data
 
 ##### Input Data
+
+number for "user id" must greater than 0
 
 ```python
 {
@@ -201,5 +226,30 @@ output data have four types: text, voice, image, video
 - no user id information or incorrect user id format
 ```python
 #return error message
-"error: incorrect user id"
+{'error': "incorrect user id format"}
+```
+- no sender information or incorrect sender format
+```python
+#return error message
+{'error': "incorrect sender format"}
+```
+- no recipient information or incorrect recipient format
+```python
+#return error message
+{'error': "incorrect recipient format"}
+```
+- no messageType information or incorrect messageType format
+```python
+#return error message
+{'error': "incorrect messageType format"}
+```
+- no content information or incorrect content format
+```python
+#return error message
+{'error': "incorrect content format"}
+```
+- incorrect message type
+```python
+#return error message
+{'error': "message type must be text/voice/image/video"}
 ```

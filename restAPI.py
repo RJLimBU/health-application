@@ -1,12 +1,12 @@
-from flask import Flask
+# from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from deviceAPI import readData
-from chatAPI import readMessage
+# from chatAPI import readMessage
 
-app = Flask(__name__)
-api = Api(app)
+# app = Flask(__name__)
+# api = Api(app)
 
-class ReadData(Resource):
+class restWeb(Resource):
     def get(self):
         return readData("deviceinfo.json","903810847"), 200
 
@@ -27,7 +27,7 @@ class ReadData(Resource):
     def delete(self):
         pass
 
-api.add_resource(ReadData, '/')
+# api.add_resource(restWeb, '/')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)

@@ -26,7 +26,7 @@ def test_deviceapi2():
 
 	status = readData(filename,key)
 
-	assert status.success == False and status.error == "Incorrect api Key"
+	assert status['error'] == "Incorrect api Key"
 
 def test_deviceapi3():
 	key = "890183781"
@@ -34,4 +34,4 @@ def test_deviceapi3():
 
 	status = readData(filename, key)
 
-	assert status.success == False and status.error == "unit not found"
+	assert status['error'] == "unit not found"
