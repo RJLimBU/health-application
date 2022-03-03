@@ -116,7 +116,7 @@ post: output data retrieved from get. <br />
 delete: this function will implement in the future, it will delete data that contain null. <br />
 
 View the flask api at the Cloud Server: <br />
-[a link](ec530healthapp.ue.r.appspot.com)
+[ec530healthapp.ue.r.appspot.com](ec530healthapp.ue.r.appspot.com)
 
 
 #### Chat Module
