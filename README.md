@@ -36,30 +36,43 @@ thermometer, pulse, etc.)
 #key         		string          key for the device api
 ```
 ##### Output data
+
+the api output data as "dict" type
+
 ```python
-#status data(NamedTuple):
-#name                      type              description 
-#status.success            boolean           return ture if read data successfully otherwise return false
-#status.error              string            description of the error
+{
+	"devices":[
+	{
+		"name": str
+		"type": str
+		"unit": str
+		"data": list
+	}
+	]
+}
 ```
 
 ##### Example
 ```python
-#Input:
-{
-	"devices" : [
-	{
-		"name": "bloodPressureMachine",
-		"type": "blood_pressure_device",
-		"unit": "mmHg",
-		"data": [120]
-	}
-	]
-}
+#Input data is json file and api key
+
+filename = "deviceinfo.json"
+key = "432901890"
+#this is the contents of json file "deviceinfo.json":
+# {
+# 	"devices" : [
+# 	{
+# 		"name": "bloodPressureMachine",
+# 		"type": "blood_pressure_device",
+# 		"unit": "mmHg",
+# 		"data": [120]
+# 	}
+# 	]
+# }
 
 readData(filename, key)
 
-#Output:
+#Output data is dict type
 {
 	"devices" : [
 	{
