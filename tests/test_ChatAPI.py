@@ -30,8 +30,7 @@ def test_chatAPI2():
 	if chk:
 		assert False
 	else:
-		#assert data['error'] == "incorrect user id format"
-		assert False
+		assert data['error'] == "incorrect user id format"
 
 def test_chatAPI3():
 	user_id = 2
