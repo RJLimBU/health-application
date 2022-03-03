@@ -115,6 +115,10 @@ get: retrieve data. <br />
 post: output data retrieved from get. <br />
 delete: this function will implement in the future, it will delete data that contain null. <br />
 
+View the flask api at the Cloud Server: <br />
+[a link] (ec530healthapp.ue.r.appspot.com)
+
+
 #### Chat Module
 
 The chat module use document-database to store chat information
@@ -124,6 +128,8 @@ The module have input data with certain format feed to chat module and it return
 The following section show formats for input data and output data
 
 ##### Input Data
+
+number for "user id" must greater than 0
 
 ```python
 {
@@ -201,5 +207,30 @@ output data have four types: text, voice, image, video
 - no user id information or incorrect user id format
 ```python
 #return error message
-"error: incorrect user id"
+{'error': "incorrect user id format"}
+```
+- no sender information or incorrect sender format
+```python
+#return error message
+{'error': "incorrect sender format"}
+```
+- no recipient information or incorrect recipient format
+```python
+#return error message
+{'error': "incorrect recipient format"}
+```
+- no messageType information or incorrect messageType format
+```python
+#return error message
+{'error': "incorrect messageType format"}
+```
+- no content information or incorrect content format
+```python
+#return error message
+{'error': "incorrect content format"}
+```
+- incorrect message type
+```python
+#return error message
+{'error': "message type must be text/voice/image/video"}
 ```

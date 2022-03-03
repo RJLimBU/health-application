@@ -65,3 +65,8 @@ def readData(filename, key):
 
 	#return Status(success=True, error="")
 	return data
+
+
+# out = readData("deviceinfo.json", "903810847")
+# print(out)
+# print(type(out))
