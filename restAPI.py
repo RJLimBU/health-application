@@ -25,8 +25,21 @@ class restWeb(Resource):
         }, 200
 
     def delete(self):
-        pass
+        parser = reqparse.RequestParser()
+        parser.add_arguement('name', require=True, type=str)
+        args =parser.parse_args()
 
+        data = readData("deviceinfo.json", "903810847")
+
+        if args['name'] in data['name']:
+            data = data[data['name'] != str(args['name'])]
+            return {"data": data}, 200
+        else:
+            return {
+                "error": "device does not exist!"
+            }, 404
+
+        
 # api.add_resource(restWeb, '/')
 
 # if __name__ == '__main__':

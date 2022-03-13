@@ -132,7 +132,7 @@ There are three functions in the restAPI: get, post, delete.
 
 get: retrieve data. <br />
 post: output data retrieved from get. <br />
-delete: this function will implement in the future, it will delete data that contain null. <br />
+delete: delete specified data in a data field. <br />
 
 View the flask api at the Cloud Server: <br />
 [ec530healthapp.ue.r.appspot.com](https://ec530healthapp.ue.r.appspot.com/)
