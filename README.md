@@ -134,9 +134,6 @@ get: retrieve data. <br />
 post: output data retrieved from get. <br />
 delete: delete specified data in a data field. <br />
 
-View the flask api at the Cloud Server: <br />
-[ec530healthapp.ue.r.appspot.com](https://ec530healthapp.ue.r.appspot.com/)
-
 
 #### Chat Module
 
