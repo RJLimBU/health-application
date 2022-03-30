@@ -17,6 +17,11 @@ I will use this branch to experiment changes to the code. <br />
 
 ### Modules
 
+#### React Framework
+
+link to the react framework repo
+[Github](https://github.com/RJLimBU/MobileAppFrameWork)
+
 #### Device Module
 
 The device module will read data from different devices. (e.g. blood pressure, <br />
